@@ -1,3 +1,3 @@
 module.exports = {
-	// Development configuration options
+	sessionSecret: 'developmentSessionSecret' // key for signing session cookies
 };
