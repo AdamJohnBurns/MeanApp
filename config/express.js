@@ -6,7 +6,6 @@ var config = require('./config'),
 	methodOverride = require('method-override'),
 	session = require('express-session');
 
-
 module.exports = function () {
 	var app = express();
 
@@ -31,7 +30,8 @@ module.exports = function () {
 	app.set('views', './app/views');
 	app.set('view engine', 'ejs');
 
-	require('../app/routes/index.server.routes.js')(app);
+	require('../app/routes/index.server.routes')(app);
+	require('../app/routes/users.server.routes')(app);
 
 	app.use(express.static('./public'));
 
