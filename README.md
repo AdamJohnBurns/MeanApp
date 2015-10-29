@@ -45,3 +45,6 @@
 
 
 ### Delete
+* URL: `/users/[USER_ID]`
+* Method: `DELETE`
+* Response: 200

@@ -36,6 +36,16 @@ exports.update = function (request, response, next) {
 	});
 };
 
+exports.delete = function (request, response, next) {
+	request.user.remove(function (error) {
+		if (error) {
+			return next(error);
+		} else {
+			response.json(request.user);
+		}
+	});
+};
+
 exports.userByID = function (request, response, next, id) {
 	User.findOne({
 		_id: id
