@@ -84,4 +84,16 @@ UserSchema.set('toJSON', {
 	getters: true
 });
 
+UserSchema.pre('save', function (next) {
+	console.log('Before save!');
+});
+
+UserSchema.post('save', function (next) {
+	if (this.isNew) {
+		console.log('After save, it was a new user!');
+	} else {
+		console.log('After save, updated an existing user');
+	}
+});
+
 mongoose.model('User', UserSchema);
